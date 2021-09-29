@@ -7,18 +7,13 @@ const { Event, User, Vote } = require('../../models');
 router.get('/', (req, res) => {
   Event.findAll({
     attributes: [
-      'id',
       'event_name',
+      'admin',
       'location',
       'zip',
-      'category',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'event_category'
+      //[sequelize.literal('(SELECT COUNT(*) FROM vote WHERE event.id = vote.event_id)'), 'vote_count']
     ],
-    include: [{
-      Model: User,
-      attributes: ['username']
-    }]
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -33,14 +28,10 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: [
-      'id',
       'event_name',
-      'admin',
       'location',
       'zip',
-      'category',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE event.id = vote.event_id)'), 'vote_count']
     ],
     include: [{
       Model: User,

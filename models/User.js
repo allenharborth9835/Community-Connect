@@ -50,22 +50,22 @@ User.init(
         len:[4]
       }
     },
-    interested_in:{
-      type:DataTypes.INTEGER,
-      unique: true,
-      references: {
-        model: 'events',
-        key: 'id'
-      }
-    },
-    attending:{
-      type:DataTypes.INTEGER,
-      unique: true,
-      references: {
-        model: 'events',
-        key: 'id'
-      }
-    }
+    // interested_in:{
+    //   type:DataTypes.INTEGER,
+    //   unique: true,
+    //   references: {
+    //     model: 'events',
+    //     key: 'id'
+    //   }
+    // },
+    // attending:{
+    //   type:DataTypes.INTEGER,
+    //   unique: true,
+    //   references: {
+    //     model: 'events',
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     hooks:{

@@ -4,9 +4,7 @@ const { Category } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
-  User.findAll({
-    attributes: { exclude: ['password'] }
-  })
+  Category.findAll({})
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
       console.log(err);
@@ -14,18 +12,18 @@ router.get('/', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-  User.destroy({
+router.get('/:id', (req, res) => {
+  Category.findOne({
     where: {
       id: req.params.id
     }
   })
-    .then(dbUserData => {
-      if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbUserData);
+      res.json(dbPostData);
     })
     .catch(err => {
       console.log(err);

@@ -5,30 +5,25 @@ const Category = require('./Category');
 
 // create associations
 User.hasMany(Event, {
-  foreignKey: 'interested_in'
+  foreignKey: 'admin'
 });
 
-User.hasMany(Event, {
-  foreignKey: 'attending'
-});
-
-Event.belongsToMany(User, {
+Event.belongsTo(User, {
   foreignKey: 'admin',
   onDelete: 'SET NULL'
 });
 
 User.belongsToMany(Event, {
   through: Vote,
-  as: 'voted_posts',
-
+  as: 'voted_events',
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
 Event.belongsToMany(User, {
   through: Vote,
-  as: 'voted_posts',
-  foreignKey: 'post_id',
+  as: 'voted_events',
+  foreignKey: 'event_id',
   onDelete: 'SET NULL'
 });
 
@@ -38,7 +33,7 @@ Vote.belongsTo(User, {
 });
 
 Vote.belongsTo(Event, {
-  foreignKey: 'post_id',
+  foreignKey: 'event_id',
   onDelete: 'SET NULL'
 });
 
@@ -47,18 +42,12 @@ User.hasMany(Vote, {
 });
 
 Event.hasMany(Vote, {
-  foreignKey: 'post_id'
-});
-
-Event.belongsToMany(Category, {
-  foreignKey: 'category',
-  onDelete: 'SET NULL'
+  foreignKey: 'event_id'
 });
 
 Category.hasMany(Event, {
-  foreignKey: 'post_id',
-  onDelete: 'SET NULL',
-  onUpdate: 'CASCADE'
+  foreignKey: 'event_category',
+  onDelete: 'SET NULL'
 });
 
 module.exports = { User, Event, Vote, Category};

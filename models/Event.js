@@ -1,7 +1,36 @@
 const{Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Event extends Model {}
+class Event extends Model {
+  static upvote(body, models){
+  return models.Vote.create({
+    user_id: body.user_id,
+    event_id: body.event_id
+  }).then(()=>{
+    return Post.findOne({
+      where:{
+        id: body.event_id
+      },
+      attributes:[
+        'id',
+        'post_url',
+        'title',
+        'created_at',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.event_id)'), 'vote_count']
+      ],
+      include: [
+        {
+          model: models.Comment,
+          attributes: ['id', 'comment_text', 'event_id', 'user_id', 'created_at'],
+          include: {
+            model: models.User,
+            attributes: ['username']
+          }
+        }
+      ]
+    });
+  });
+}}
 
 Event.init(
   {
@@ -17,7 +46,6 @@ Event.init(
     },
     admin:{
       type:DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'user',
         key: 'id'
@@ -33,9 +61,8 @@ Event.init(
         len:[4]
       }
     },
-    category:{
+    event_category:{
       type:DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'category',
         key: 'id'

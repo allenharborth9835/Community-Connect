@@ -1,3 +1,4 @@
 DROP DATABASE IF EXISTS Communitarian_DB;
 
 CREATE DATABASE Communitarian_DB;
+
