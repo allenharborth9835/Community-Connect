@@ -11,7 +11,10 @@ async function editFormHandler(event) {
   const response = await fetch(`/api/events/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
-      title
+      event_name,
+      location,
+      zip,
+      event_category
     }),
     headers: {
       'Content-Type': 'application/json'

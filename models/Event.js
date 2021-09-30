@@ -7,7 +7,7 @@ class Event extends Model {
     user_id: body.user_id,
     event_id: body.event_id
   }).then(()=>{
-    return Post.findOne({
+    return Event.findOne({
       where:{
         id: body.event_id
       },
