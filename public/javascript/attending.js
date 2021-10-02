@@ -1,11 +1,11 @@
-async function interestClickHandler(event) {
+async function attendingClickHandler(event) {
   event.preventDefault();
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  const response = await fetch('/api/posts/interested',{
+  const response = await fetch('/api/posts/attending',{
     method: 'PUT',
     body: JSON.stringify({
       event_id: id
@@ -21,4 +21,4 @@ async function interestClickHandler(event) {
     alert(response.statusText);
   }
 }
-document.querySelector('.interest-btn').addEventListener('click', interestClickHandler);
+document.querySelector('.attend-btn').addEventListener('click', interestClickHandler);
