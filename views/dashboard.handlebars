@@ -1,0 +1,56 @@
+<section>
+  <h2>Create New Event</h2>
+
+  <form class="new-event-form">
+    <div>
+      <label for="event-name">Event Name:</label>
+      <input type="text" id="event-name" name="event-name" />
+    </div>
+    <div>
+      <label for="event-date">Event Date:</label>
+      <input id="event-date" name="event-date" />
+    </div>
+    <div>
+      <label for="event-location">Event Address:</label>
+      <input id="event-location" name="event-location" />
+    </div>
+    <div>
+      <label for="event-zip">Event Zip Code:</label>
+      <input id="event-zip" name="event-zip" />
+    </div>
+    <div>
+      <label for="event-date">Event Date:</label>
+      <input id="event-date" name="event-date" />
+    </div>
+    <div>
+      <p>Event Categories:</p>
+      <div id="event-categories">
+          <label for="environmental">Environmental</label>
+          <input type="checkbox" id="environmental" name="environmental">
+          <label for="Education">Education</label>
+          <input type="checkbox" id="education" name="education">
+          <label for="animals">Animals</label>
+          <input type="checkbox" id="animals" name="animals">
+          <label for="social-work">Social Work</label>
+          <input type="checkbox" id="social-work" name="social-work">
+          <label for="fund-char">Fundraising/Charity</label>
+          <input type="checkbox" id="fund-char" name="fund-char">    
+      </div>
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+{{#if events.length}}
+<section>
+  <h2>Your Event</h2>
+  <ul>
+    {{#each events as |event|}}
+    <li>
+      {{> events-info event}}
+      <a href="/dashboard/edit/{{event.event_name}}" class="edit-link">Edit Event</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
+<script src="/javascript/add-event.js"></script>

@@ -1,0 +1,13 @@
+{{> events-info event }}
+{{#if loggedIn}}
+<form class="interest-form">
+  <div>
+    <button type="button" class="attend-btn">attending</button>
+    <button type="button" class="interest-btn">interested</button>
+  </div>
+</form>
+{{/if}}
+{{#if loggedIn}}
+<script src="/javascript/attending.js"></script>
+<script src="/javascript/interested.js"></script>
+{{/if}}

@@ -15,7 +15,17 @@ router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
       id: req.params.id
-    }
+    },
+    include:[
+      {
+        module:Event,
+        attributes:['event_name', 'location',  'zip', 'event_category' ],
+        include:{
+          model:Category,
+          attributes:['category_name']
+        }
+      }
+    ]
   })
     .then(dbPostData => {
       if (!dbPostData) {

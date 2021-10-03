@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Event, Category } = require('../../models');
+const { withAuth } = require('../../utils');
 
 // get all users
 router.get('/', (req, res) => {
@@ -18,7 +19,17 @@ router.get('/:id', (req, res) => {
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
-    }
+    },
+    include:[
+      {
+        module:Event,
+        attributes:['event_name', 'location',  'zip', 'event_category' ],
+        include:{
+          model:Category,
+          attributes:['category_name']
+        }
+      }
+    ]
   })
   .then(dbUserData => {
     if (!dbUserData) {
@@ -89,9 +100,9 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
-    individualHooks: true,
+      individualHooks: true,
     where: {
       id: req.params.id
     }
@@ -109,7 +120,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id
