@@ -80,3 +80,5 @@ router.get('/post/:id', (req, res) => {
           res.status(500).json(err);
         });
 });
+
+module.exports = router;
