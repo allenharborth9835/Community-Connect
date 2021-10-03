@@ -63,7 +63,12 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
   Post.create(req.body,{
-    admin: req.session.user_id 
+    admin: req.session.user_id,
+    event_name: req.body.event_name,
+    event_date: req.body.event_date,
+    location: req.body.location, 
+    zip: req.body.zip,
+    event_category: req.body.category
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -84,22 +89,26 @@ router.put('/upvote', withAuth, (req, res) => {
 
 router.put('/interested', withAuth, (req, res) => {
   // custom static method created in models/Event.js
-  Post.interest(req.body, {}, { Vote, Event, User })
-    .then(updatedData => res.json(updatedData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  if (req.session) {
+    Post.interest(req.body, {...req.body, user_id: req.session.user_id}, { Vote, Event, User })
+      .then(updatedData => res.json(updatedData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    }
 });
 
 router.put('/attending', withAuth, (req, res) => {
   // custom static method created in models/Event.js
-  Post.attend(req.body, {}, { Vote, Event, User })
-    .then(updatedData => res.json(updatedData))
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  if (req.session) {
+    Post.interest(req.body, {...req.body, user_id: req.session.user_id}, { Vote, Event, User })
+      .then(updatedData => res.json(updatedData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    }
 });
 
 router.put('/:id', withAuth, (req, res) => {

@@ -1,0 +1,23 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Event
+  </h2>
+  <form class="edit-post-form">
+    <div>
+      <input name="event-name" type="text" value="{{event.event_name}}" />
+      <input name="event-date" type="text" value="{{event.event_date}}" />
+      <input name="event_location" type="text" value="{{event.location}}" />
+      <input name="event_zip" type="text" value="{{event.zip}}" />
+    </div>
+    <div>
+        {{attending_count}} attending
+        |
+        {{interested_count}} interested
+    </div>
+    <button type="submit">Save Event</button>
+    <button type="button" class="delete-post-btn">Delete post</button>
+  </form>
+</article>
+<script src="/javascript/edit-event.js"></script>
+<script src="/javascript/delete-event.js"></script>

@@ -11,14 +11,41 @@
 <body>
   <div>
     <header>
+      <h1>
+        <a href="/">Community Connect</a>
+      </h1>
+      <nav>
+        <a href="/signup">login</a>
+        {{#if loggedIn}}
+        <a href="/dashboard">dashboard</a>
+        <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
     </header>
     <main>
+      <div>
+        <h3>Search By Category</h3>
+        <div>
+          <button class="btn">Environmental</button>
+          <button class="btn">Education</button>
+          <button class="btn">Animals</button>
+          <button class="btn">Social Work</button>
+          <button class="btn">Fundraising/Charity</button>
+        </div>
+      </div>
+      <div>
       {{{ body }}}
+      </div>
     </main>
     <footer>
+      Made with Love by the Community Connect Team
     </footer>
   </div>
-  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
