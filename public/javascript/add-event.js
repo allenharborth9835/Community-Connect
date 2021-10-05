@@ -6,18 +6,24 @@ async function newFormHandler(event){
   const event_date = document.querySelector('input[name="event-date"]').value;
   const location = document.querySelector('input[name="event-location"]').value;
   const zip = document.querySelector('input[name="event-zip"]').value;
-  let event_category = document.querySelector('input[name="event-category"]:checked').value;
+  let event_category = ''
 
-  if (document.querySelector('input[name="event-category"]:checked').value == "Environmental") {
-    event_category = 1
-  } else if (document.querySelector('input[name="event-category"]:checked').value == "Fundraising/Charity") {
-    event_category = 2
-  } else if (document.querySelector('input[name="event-category"]:checked').value == "Education") {
-    event_category = 3
-  } else if (document.querySelector('input[name="event-category"]:checked').value == "Animals") {
-    event_category = 4
-  } else if (document.querySelector('input[name="event-category"]:checked').value == "Social Work") {
-    event_category = 5 }
+  if (document.querySelector('input[name="event-category"]:checked').value === "environmental") {
+    let event_category = 1
+    console.log(event_category)
+  } else if (document.querySelector('input[name="event-category"]:checked').value === "fundraising/charity") {
+    let event_category = 2
+    console.log(event_category)
+  } else if (document.querySelector('input[name="event-category"]:checked').value === "education") {
+    let event_category = 3
+    console.log(event_category)
+  } else if (document.querySelector('input[name="event-category"]:checked').value === "animals") {
+    let event_category = 4
+    console.log(event_category)
+  } else if (document.querySelector('input[name="event-category"]:checked').value === "social work") {
+    let event_category = 5 
+    console.log(event_category)}
+    
 
 
 
