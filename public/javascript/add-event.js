@@ -6,9 +6,9 @@ async function newFormHandler(event){
   const event_date = document.querySelector('input[name="event-date"]').value;
   const location = document.querySelector('input[name="event-location"]').value;
   const zip = document.querySelector('input[name="event-zip"]').value;
-  const event_category = document.querySelector('input[name="event-category"]:checked').value;
+  let event_category = document.querySelector('input[name="event-category"]:checked').value;
 
-  if (document.querySelector('input[name="event-category"]').value == "Environmental") {
+  if (document.querySelector('input[name="event-category"]:checked').value == "Environmental") {
     event_category = 1
   } else if (document.querySelector('input[name="event-category"]:checked').value == "Fundraising/Charity") {
     event_category = 2
