@@ -1,11 +1,11 @@
-async function upvoteClickHandler(event) {
+async function attendingClickHandler(event) {
   event.preventDefault();
 
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  const response = await fetch('/api/posts/upvote',{
+  const response = await fetch('/api/posts/attending',{
     method: 'PUT',
     body: JSON.stringify({
       event_id: id
@@ -21,4 +21,4 @@ async function upvoteClickHandler(event) {
     alert(response.statusText);
   }
 }
-document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
+document.querySelector('.attend-btn').addEventListener('click', interestClickHandler);
