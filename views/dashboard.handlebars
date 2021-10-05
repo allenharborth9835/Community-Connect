@@ -20,20 +20,21 @@
     </div>
     <div>
       <p>Event Categories:</p>
-      <div id="event-categories">
+      <div id="event-category">
           <label for="environmental">Environmental</label>
-          <input type="checkbox" id="environmental" name="environmental">
-          <label for="Education">Education</label>
-          <input type="checkbox" id="education" name="education">
-          <label for="animals">Animals</label>
-          <input type="checkbox" id="animals" name="animals">
-          <label for="social-work">Social Work</label>
-          <input type="checkbox" id="social-work" name="social-work">
+          <input type="radio" id="environmental" name="event-category">
           <label for="fund-char">Fundraising/Charity</label>
-          <input type="checkbox" id="fund-char" name="fund-char">    
+          <input type="radio" id="fund-char" name="event-category">  
+          <label for="education">Education</label>
+          <input type="radio" id="education" name="event-category">
+          <label for="animals">Animals</label>
+          <input type="radio" id="animals" name="event-category">
+          <label for="social-work">Social Work</label>
+          <input type="radio" id="social-work" name="event-category">
+              
       </div>
     </div>
-    <button type="submit" class="submit-btn">Create</button>
+    <button type="submit">Create</button>
   </form>
 </section>
 {{#if events.length}}

@@ -62,13 +62,8 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  Post.create(req.body,{
+  Event.create(req.body,{
     admin: req.session.user_id,
-    event_name: req.body.event_name,
-    event_date: req.body.event_date,
-    location: req.body.location, 
-    zip: req.body.zip,
-    event_category: req.body.category
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
