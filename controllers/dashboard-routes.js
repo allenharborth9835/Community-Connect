@@ -7,7 +7,7 @@ router.get('/', withAuth, (req, res) => {
     Event.findAll({
         where: {
             // use the ID from the session
-            user_id: req.session.user_id
+            admin: req.session.user_id
         },
         attributes: [
           'event_name',
