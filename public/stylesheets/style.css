@@ -11,6 +11,51 @@ body {
 
 header {
     font-family: 'Abril Fatface', cursive;
+    background-color: var(--purple);
 }
 
-#mapid { height: 180px; }
+header a {
+    color: var(--green);
+}
+
+header h1 {
+    float: left;
+    color: var(--green);
+    font-size: 54px;
+}
+
+nav {
+    float: right;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+main {
+    float: left;
+}
+
+.row {
+    margin-top: auto;
+    margin-bottom: 21px;
+}
+
+.btn {
+    display: inline;
+}
+
+.event {
+
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+} 
+
+#mapid { 
+    height: 300px;
+    width: 300px;
+}
