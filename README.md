@@ -25,12 +25,13 @@ Add descriptions here.
 ## Project Roles
 Models - Allen Harborth \
 Connections/API/Leaflet -  Katy Edmonds \
-Views- Megha Samala - Matthew Quinones \
+Views- Megha Samala - Matthew Quinones 
 
 ## Technology Used
 Javascript \
 JQuery \
-CSS - CSS Framework Bootstrap \
+CSS \ 
+CSS Framework - Bootstrap \
 HTML \
 API - (Enter API name here) \
 Leaflet \
