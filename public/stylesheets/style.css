@@ -6,17 +6,19 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    
-
+    color: var(--purple);
 }
 
 header {
     font-family: 'Abril Fatface', cursive;
 }
 
+header a {
+    color: var(--green);
+}
+
 header h1 {
     float: left;
-    color: var(--green);
     font-size: 54px;
 }
 
@@ -29,6 +31,19 @@ nav {
 
 main {
     float: left;
+}
+
+.row {
+    margin-top: auto;
+    margin-bottom: 21px;
+}
+
+.btn {
+    display: inline;
+}
+
+.event {
+    
 }
 
 footer {
