@@ -98,6 +98,10 @@ Event.init(
       type:DataTypes.STRING,
       allowNull: false
     },
+    event_date:{
+      type:DataTypes.STRING,
+      allowNull: false
+    },
     admin:{
       type:DataTypes.INTEGER,
       references: {

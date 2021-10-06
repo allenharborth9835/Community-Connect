@@ -47,6 +47,8 @@ router.get('/post/:id', (req, res) => {
           id: req.params.id
         },
         attributes: [
+            // added id attribute here
+          'id',
           'event_name',
           'location',
           'zip',
