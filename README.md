@@ -23,16 +23,18 @@ Add description on how to install node.. run seeds/schema etc..
 Add descriptions here.
 
 ## Project Roles
-Models - Allen Harborth
-Connections/API -  Katy Edmonds
-Views- Megha Samala - Matthew Quinones
+Models - Allen Harborth \
+Connections/API/Leaflet -  Katy Edmonds \
+Views- Megha Samala - Matthew Quinones 
 
 ## Technology Used
-Javascript
-JQuery
-CSS - CSS Framework Bootstrap
-HTML
-API - (Enter API name here)
+Javascript \
+JQuery \
+CSS \ 
+CSS Framework - Bootstrap \
+HTML \
+API - (Enter API name here) \
+Leaflet \
 .... add more here. 
 
 ## License 
