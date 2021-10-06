@@ -1,10 +1,10 @@
 const { Category } = require('../models');
 
 const userdata = [
-  {category_name:"beautification"},
-  {category_name:"charity"},
+  {category_name:"environmental"},
+  {category_name:"fundraising/charity"},
   {category_name:"education"},
-  {category_name:"fund raising"},
+  {category_name:"animals"},
   {category_name:"social work"}
 ]
 
