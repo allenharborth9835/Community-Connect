@@ -1,5 +1,5 @@
 async function newFormHandler(event){
-  console.log(event)
+ 
   event.preventDefault();
 
   const event_name = document.querySelector('input[name="event-name"]').value;
@@ -9,25 +9,25 @@ async function newFormHandler(event){
   let event_category = ''
 
   if (document.querySelector('input[name="event-category"]:checked').value === "environmental") {
-    let event_category = 1
+    event_category = 1
     console.log(event_category)
-  } else if (document.querySelector('input[name="event-category"]:checked').value === "fundraising/charity") {
-    let event_category = 2
+  } if (document.querySelector('input[name="event-category"]:checked').value === "fundraising/charity") {
+    event_category = 2
     console.log(event_category)
-  } else if (document.querySelector('input[name="event-category"]:checked').value === "education") {
-    let event_category = 3
+  } if (document.querySelector('input[name="event-category"]:checked').value === "education") {
+    event_category = 3
     console.log(event_category)
-  } else if (document.querySelector('input[name="event-category"]:checked').value === "animals") {
-    let event_category = 4
+  } if (document.querySelector('input[name="event-category"]:checked').value === "animals") {
+    event_category = 4
     console.log(event_category)
-  } else if (document.querySelector('input[name="event-category"]:checked').value === "social work") {
-    let event_category = 5 
+  } if (document.querySelector('input[name="event-category"]:checked').value === "social work") {
+    event_category = 5 
     console.log(event_category)}
     
 
 
-
-  const response = await fetch(`/api/events`, {
+console.log(response)
+  var response = await fetch(`/api/events`, {
     method: 'POST',
     body: JSON.stringify({
       event_name,
