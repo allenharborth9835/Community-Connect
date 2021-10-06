@@ -1,4 +1,4 @@
-. {
+:root {
 --green: #83C188;
 --blue: #839DC1;
 --purple: #8883C1;
@@ -6,8 +6,31 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    
+
 }
 
 header {
     font-family: 'Abril Fatface', cursive;
+}
+
+header h1 {
+    float: left;
+    color: var(--green);
+    font-size: 54px;
+}
+
+nav {
+    float: right;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+main {
+    float: left;
+}
+
+footer {
+    margin-top: auto;
 }
