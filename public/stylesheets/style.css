@@ -1,0 +1,51 @@
+:root {
+--green: #83C188;
+--blue: #839DC1;
+--purple: #8883C1;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--purple);
+}
+
+header {
+    font-family: 'Abril Fatface', cursive;
+}
+
+header a {
+    color: var(--green);
+}
+
+header h1 {
+    float: left;
+    font-size: 54px;
+}
+
+nav {
+    float: right;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+main {
+    float: left;
+}
+
+.row {
+    margin-top: auto;
+    margin-bottom: 21px;
+}
+
+.btn {
+    display: inline;
+}
+
+.event {
+    
+}
+
+footer {
+    margin-top: auto;
+}

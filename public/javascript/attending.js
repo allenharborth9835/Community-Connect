@@ -21,4 +21,4 @@ async function attendingClickHandler(event) {
     alert(response.statusText);
   }
 }
-document.querySelector('.attend-btn').addEventListener('click', interestClickHandler);
+document.querySelector('.attend-btn').addEventListener('click', attendingClickHandler);
