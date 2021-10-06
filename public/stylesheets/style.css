@@ -1,3 +1,9 @@
+. {
+--green: #83C188;
+--blue: #839DC1;
+--purple: #8883C1;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -5,4 +11,3 @@ body {
 header {
     font-family: 'Abril Fatface', cursive;
 }
-
