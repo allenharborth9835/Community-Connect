@@ -18,10 +18,16 @@ header a {
     color: var(--green);
 }
 
+header a:hover {
+    color: var(--green);
+    text-decoration: none;
+}
+
 header h1 {
     float: left;
     color: var(--green);
     font-size: 54px;
+    margin-left: 5px;
 }
 
 nav {
@@ -44,15 +50,12 @@ main {
     display: inline;
 }
 
-.event {
-
-}
-
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
+    margin-left: 5px;
 } 
 
 #mapid { 
