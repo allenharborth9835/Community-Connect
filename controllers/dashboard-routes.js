@@ -67,7 +67,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             res.render('edit-post', { 
                 event,
                 loggedIn: req.session.loggedIn
-             });
+            });
         })
         .catch(err => {
           console.log(err);
