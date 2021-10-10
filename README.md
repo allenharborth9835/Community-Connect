@@ -12,7 +12,7 @@ Community Connect is a website that allows for aspiring volunteers to find and b
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Credits](#ProjectRoles)
+* [Credits](#Credits)
 * [Technology Used](#TechnologyUsed)
 * [License](#License)
 
@@ -22,7 +22,7 @@ Add description on how to install node.. run seeds/schema etc..
 ## Usage 
 Add descriptions here.
 
-## Project Roles
+## Credits
 Models - Allen Harborth \
 Connections/API/Leaflet -  Katy Edmonds \
 Views- Megha Samala - Matthew Quinones 
