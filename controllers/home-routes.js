@@ -5,6 +5,7 @@ const { Event, User, Category } = require('../models');
 router.get('/', (req, res) => {
     Event.findAll({
         attributes: [
+          'id',
           'event_name',
           'location',
           'zip',
@@ -24,7 +25,7 @@ router.get('/', (req, res) => {
             res.render('homepage', { 
                 events,
                 loggedIn: req.session.loggedIn
-             });
+            });
         })
         .catch(err => {
           console.log(err);
@@ -47,7 +48,7 @@ router.get('/post/:id', (req, res) => {
           id: req.params.id
         },
         attributes: [
-            // added id attribute here
+          // added id attribute here
           'id',
           'event_name',
           'location',
@@ -75,7 +76,7 @@ router.get('/post/:id', (req, res) => {
             res.render('single-event', { 
                 event,
                 loggedIn: req.session.loggedIn
-             });
+            });
         })
         .catch(err => {
           console.log(err);

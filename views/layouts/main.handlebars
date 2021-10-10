@@ -12,27 +12,26 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
   
   {{!-- Leaflet CSS --}}
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-         <!--- Leaflet JS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+          <!--- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 </head>
 
 <body>
-  <div>
     <header>
       <h1>
         <a href="/">Community Connect</a>
       </h1>
       <nav>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
+        <a href="/dashboard">Dashboard</a>
+        <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
@@ -53,11 +52,10 @@
           {{{ body }}}
           </div>
         </div>
-      </div>
 
 
     <!--Leaflet Div-->
-       <div id="mapid"></div>
+      <div id="mapid"></div>
 
   <script>
     var mymap = L.map('mapid').setView([30.2672, -97.7431], 13);
@@ -71,19 +69,14 @@
     accessToken: 'pk.eyJ1Ijoia2F0eW5pY29sZTg5IiwiYSI6ImNrdWZ1Y3U4NTF4d20zMnE2cHg4ZXlvbjMifQ.gPzb838kgasGqX8geNXo2g'
 }).addTo(mymap);
   </script>
-       
-    </main>
+      
+  </main>
     <footer>
       Made with Love by the Community Connect Team
     </footer>
-  </div>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
-
-
-
-
 </body>
 
 </html>

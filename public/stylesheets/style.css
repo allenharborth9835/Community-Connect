@@ -1,9 +1,64 @@
+:root {
+--green: #83C188;
+--blue: #839DC1;
+--purple: #8883C1;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
+    color: var(--purple);
 }
 
 header {
     font-family: 'Abril Fatface', cursive;
+    background-color: var(--purple);
 }
 
-#mapid { height: 180px; }
+header a {
+    color: var(--green);
+}
+
+header a:hover {
+    color: var(--green);
+    text-decoration: none;
+}
+
+header h1 {
+    float: left;
+    color: var(--green);
+    font-size: 54px;
+    margin-left: 5px;
+}
+
+nav {
+    float: right;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+main {
+    float: left;
+}
+
+.row {
+    margin-top: auto;
+    margin-bottom: 21px;
+}
+
+.btn {
+    display: inline;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-left: 5px;
+} 
+
+#mapid { 
+    height: 300px;
+    width: 300px;
+}
