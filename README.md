@@ -34,7 +34,7 @@ Javascript \
 Handlebars.js \
 Express.js \
 CSS \ 
-CSS Framework - Bootstrap \
+Bootstrap \
 HTML \
 Leaflet.js \
 Node.js \
