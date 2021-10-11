@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
           'event_category',
           'location',
           'zip',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE event.id = vote.event_id)'), 'vote_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM attending WHERE event.id = attending.event_id)'), 'attending_count'],
+          [sequelize.literal('(SELECT COUNT(*) FROM intersed_in WHERE event.id = intersed_in.event_id)'), 'interested_count']
         ],
         include:{
           model:Category,
@@ -59,7 +60,8 @@ router.get('/post/:id', (req, res) => {
           'event_category',
           'location',
           'zip',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE event.id = vote.event_id)'), 'vote_count']
+          [sequelize.literal('(SELECT COUNT(*) FROM attending WHERE event.id = attending.event_id)'), 'attending_count'],
+          [sequelize.literal('(SELECT COUNT(*) FROM intersed_in WHERE event.id = intersed_in.event_id)'), 'interested_count']
         ],
         include:{
           model:Category,
