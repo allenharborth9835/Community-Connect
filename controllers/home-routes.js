@@ -5,8 +5,11 @@ const { Event, User, Category } = require('../models');
 router.get('/', (req, res) => {
     Event.findAll({
         attributes: [
-          'id',
+          'id',  
           'event_name',
+          'admin',
+          'event_date',
+          'event_category',
           'location',
           'zip',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE event.id = vote.event_id)'), 'vote_count']
@@ -51,6 +54,9 @@ router.get('/post/:id', (req, res) => {
           // added id attribute here
           'id',
           'event_name',
+          'admin',
+          'event_date',
+          'event_category',
           'location',
           'zip',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE event.id = vote.event_id)'), 'vote_count']
