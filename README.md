@@ -17,13 +17,13 @@ Community Connect is a website that allows for aspiring volunteers to find and b
 * [License](#License)
 
 ## Installation 
-Type “npm install”
-Run mysql command “source db/schema.sql”
-Create .env file as follows
-	DB_NAME = 'Communitarian_DB'
-  DB_USER = your mysql username
-  DB_PW = your mysql password
-Type “npm run seed”
+Type “npm install” \
+Run mysql command “source db/schema.sql” \
+Create .env file as follows \
+	DB_NAME = 'Communitarian_DB' \
+  DB_USER = your mysql username \
+  DB_PW = your mysql password \
+Type “npm run seed” \
 
 
 ## Usage 
