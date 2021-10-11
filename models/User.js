@@ -33,7 +33,8 @@ User.init(
     phone_number:{
       type:DataTypes.STRING,
       validate:{
-        is: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/i
+        len: [10]
+        // is: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/i
       }
     },
     zip_code:{
