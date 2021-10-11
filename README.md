@@ -23,7 +23,7 @@ Create .env file as follows \
 	DB_NAME = 'Communitarian_DB' \
   DB_USER = your mysql username \
   DB_PW = your mysql password \
-Type “npm run seed” \
+Type “npm run seed” 
 
 
 ## Usage 
@@ -41,7 +41,8 @@ CSS \
 CSS Framework - Bootstrap \
 HTML \
 API -Leaflet \
-node.js
+Node.js \
+Sequalize 
 
 ## License 
 <div style="height:300px; width:90%; overflow:auto;">
