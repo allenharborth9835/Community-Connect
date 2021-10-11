@@ -47,6 +47,8 @@ router.get('/post/:id', (req, res) => {
           id: req.params.id
         },
         attributes: [
+            // added id attribute here
+          'id',
           'event_name',
           'location',
           'zip',
@@ -80,3 +82,5 @@ router.get('/post/:id', (req, res) => {
           res.status(500).json(err);
         });
 });
+
+module.exports = router;

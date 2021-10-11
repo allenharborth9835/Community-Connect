@@ -4,7 +4,7 @@ const { Event, Intersed_in } = require('../../models');
 router.get('/', (req, res) => {
   Intersed_in.findAll({
     where:{
-      user_id: req.session.user_id
+      admin: req.session.user_id
     },
     attributes: [],
     include:{
