@@ -1,7 +1,7 @@
 async function newFormHandler(event){
- 
   event.preventDefault();
 
+  
   const event_name = document.querySelector('input[name="event-name"]').value;
   const event_date = document.querySelector('input[name="event-date"]').value;
   const location = document.querySelector('input[name="event-location"]').value;
@@ -20,7 +20,7 @@ async function newFormHandler(event){
   } if (document.querySelector('input[name="event-category"]:checked').value === "animals") {
     event_category = 4
     console.log(event_category)
-  } if (document.querySelector('input[name="event-category"]:checked').value === "social work") {
+  } if (document.querySelector('input[name="event-category"]:checked').value === "social-work") {
     event_category = 5 
     console.log(event_category)}
     
